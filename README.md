@@ -71,9 +71,53 @@ je dobré specifikovat datový typ informace
     - *VELOCITY_X* - rychlost v ose X v [m/s]
     - *VELOCITY_Y* - rychlost v ose Y v [m/s]
     - *VELOCITY_Z* - rychlost v ose Z v [m/s]
-
-
-
+- Informace o rychlosti z GPS1 (id: 0x170)
+    - *TIME_STAMP* - čas od zapnutí senzoru v [s]
+    - *GPS_VEL_STATUS* - status enum o spočtených hodnotách
+        - *VEL_SOL_COMPUTED* = 0, spočteno validní řešení
+        - *VEL_INSUFFICIENT_OBS* = 1, nedostatešný počet SV
+        - *VEL_INTERNAL_ERROR* = 2, interní chyba
+        - *VEL_LIMIT* = 3, překročení rychlostního limitu
+    - *GPS_VEL_INFO_TYPE* - enum informující o typu dosaženého řešení
+        - *VEL_NO_SOLUTION* = 0, žádné řešení není dostupné
+        - *VEL_UNKNOWN_TYPE* = 1, řešení neznámého typu
+        - *VEL_DOPPLER* = 2, řešením je dopplerova rychlost
+        - *VEL_DIFFERENTIAL* = 3, rychlost spočítána pomocí času mezi dvěma body
+- Rychost z GPS1 (id: 0x171)
+    - *Vel_N* - rychlost severním směrem v [m/s]
+    - *Vel_E* - rychlost východním směrem v [m/s]
+    - *Vel_D* - rychlost směrem dolů v [m/s]
+- Přesnost rychlosti formule z GPS1 (id: 0x172)
+    - *Vel_Acc_N* - přesnost rychlosti severním směrem v [m/s]
+    - *Vel_Acc_E* - přesnost rychlosti východním směrem v [m/s]
+    - *Vel_Acc_D* - přesnost rychlosti směrem dolů v [m/s]
+- Informace o pozici z GPS1 (id: 0x174)
+    - *Time_stamp* - čas od zapnutí senzoru v [s]
+    - *GPS_POS_STATUS* - status enum o spočtených hodnotách
+        - *POS_SOL_COMPUTED* = 0, spočteno validní řešení
+        - *POS_INSUFFICIENT_OBS* = 1, nedostatešný počet SV
+        - *POS_INTERNAL_ERROR* = 2, interní chyba
+        - *POS_HEIGHT_LIMIT* = 3, překročení výškového limitu
+    - *GPS_POS_TYPE* - enum informující o typu dosaženého řešení
+        - *POS_NO_SOLUTION* = 0, žádné řešení není dostupné
+        - *POS_UNKNOWN_TYPE* = 1, řešení neznámého typu
+        - *POS_SINGLE* = 2, single point solution
+        - *POS_PSRDIFF* = 3, standard pseudorange differential solution
+        - *POS_SBAS* = 4, použit SBAS satelit k diferenciálním korekcím
+        - *POS_OMNISTAR* = 5,
+        - *POS_RTK_FLOAT* = 6,
+        - *POS_RTK_INT* = 7,
+        - *POS_PPP_FLOAT* = 8,
+        - *POS_PPP_INT* = 9,
+        - *POS_FIXED* = 10,
+    - +17 bool polí informující o tom jestli byl k dosažení řešení použit daný satelit
+- Pozice formule z GPS1 (id: 0x175)
+    - *Latitude* - zeměpisná šířka v [°]
+    - *Longitude* - zeměpisná výška v [°]
+- Přesnost pozice z GPS1 (id: 0x177)
+    - *Lat_Acc* - přesnost zeměpisné šířky v [m]
+    - *Long_Acc* - přesnost zeměpisné výšky [m]
+    - *Alt_Acc* - přesnost nadmořské výšky [m]
 
 ### Tipy na knihovny
 - [Matplotlib](https://matplotlib.org/)
