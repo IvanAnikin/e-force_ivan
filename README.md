@@ -21,11 +21,11 @@ Výsledkem práce by měl být
 -Rozpoznávání zpráv pomocí ID
     Každé ID reprezentuje zprávu s nějakým typem
     Tyto typy jsou definovány v souboru D1.json
-Například pro přístup k zprávě o pozici formule (0x134)
+Například pro přístup k zprávě o pozici formule (id: 0x134)
 `data[id][i-tá zpráva][1 pro data, 0 pro timestamp][název informace]`
-`latitude = double(data[134][0][1]['Latitude'])`
-`longitude = double(data[134][0][1]['Longitude'])`
-`timestamp = data[134][0][0]`
+`latitude = double(data[0x134][0][1]['Latitude'])`
+`longitude = double(data[0x134][0][1]['Longitude'])`
+`timestamp = data[0x134][0][0]`
 je dobré specifikovat datový typ informace
 
 ### Typy zpráv a ID
