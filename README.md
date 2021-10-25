@@ -16,6 +16,7 @@ Výsledkem práce by měl být
 - průměrný čas kola
 - nejrychlejší kolo
 - Kreativitě se meze nekladou
+    - bylo by třeba zajímavé porovnat měření stejných věcí z různých zdrojů
 
 ### Použití CanDB
 -Rozpoznávání zpráv pomocí ID
