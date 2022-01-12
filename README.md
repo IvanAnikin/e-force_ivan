@@ -119,6 +119,18 @@ je dobré specifikovat datový typ informace
     - *Lat_Acc* - přesnost zeměpisné šířky v [m]
     - *Long_Acc* - přesnost zeměpisné výšky [m]
     - *Alt_Acc* - přesnost nadmořské výšky [m]
+- Tlaky v brzdném okruhu (id: 0x142)
+    - *Front* - Tlak v předním brzdovém ohruhu [kPa]
+    - *Front_STAT* - Enum o stavu, v našich datech nezajímavé
+    - *Front_FT* - Fault senzoru [bool]
+    - *Back* - Tlak v zadním brzdovém ohruhu [kPa]
+    - *Back_STAT* - Enum o stavu, v našich datech nezajímavé
+    - *Back_FT* - Fault senzoru [bool]
+    - *BPPC* - Brake plausibility check active
+    - *RegenPedalPos* - Unused
+    - *RegenPedalPos_STAT* - Unused
+    - *RegenPedalPos_FT* - Unused
+    - *SEQ* - Počítadlo, pro kontrolu jestli zprávy chodí
 
 ### Tipy na knihovny
 - [Matplotlib](https://matplotlib.org/)
