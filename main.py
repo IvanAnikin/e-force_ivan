@@ -3,6 +3,8 @@ from typing import Dict, List, Tuple, Union
 from candb import CanDB
 import numpy as np
 
+from ivan import tlak_zrychleni
+
 
 def parse_log(file, pathToJson) -> Dict[int, List[Tuple[float, List[Union[int, float]]]]]:
     data: Dict[int, List[Tuple[float, List]]] = {}
@@ -19,7 +21,7 @@ def parse_log(file, pathToJson) -> Dict[int, List[Tuple[float, List[Union[int, f
                 can_id = int(id_str[:-1], base=10)
             else:
                 can_id = int(id_str, base=10)
-            if can_id not in [419365098]:
+            if can_id not in [289, 322]:
                 continue
             # first get number of bytes in payload
             byte_count = int(parts[5])
@@ -34,8 +36,10 @@ def parse_log(file, pathToJson) -> Dict[int, List[Tuple[float, List[Union[int, f
 
 
 def main():
-    data = parse_log("track_drive02.asc", "D1.json")
+    data = parse_log("./data/man2/CAN/log.asc", "D1.json")
+    #print(data)
 
+    tlak_zrychleni(data)
 
 if __name__ == '__main__':
     main()
